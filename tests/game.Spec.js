@@ -8,7 +8,7 @@ describe('Ten pin Bowling Game', () => {
   }
 
   beforeEach(() => {
-    game = new BowlingGame('Wandile', 'Andy');
+    game = new BowlingGame('Wandile');
   })
 
 
