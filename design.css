@@ -1,87 +1,82 @@
-.title{
-  text-align: center;
+.title {
+	text-align: center;
 }
 
-.buttons{
-  text-align: center;
-  margin: 30px;
+.buttons {
+	text-align: center;
+	margin: 30px;
 }
 
-.notice{
-  text-align: center;
-  color: #d3313a;
+.buttons button {
+	background-color: #d3313a;
+	color: #fff;
+	border: none;
+	border-radius: 15px;
+	height: 25px;
 }
 
-.final-score{
-  text-align: center;
-  color: green;
-  padding-bottom: 10px;
+#buttons2 {
+	display: none;
 }
 
-#playagain{
-  text-align: center;
+.notice {
+	text-align: center;
+	color: #d3313a;
 }
 
-#btn1 {
-  width: 80px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: #d3313a;
-  color: #fff;
+.final-score {
+	text-align: center;
+	color: green;
+	padding-bottom: 10px;
 }
 
-#btn2 {
-  width: 80px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  display: none;
-  background-color: #d3313a;
-  color: #fff;
+#playagain {
+	text-align: center;
 }
 
 table.scorecard {
-  margin: 0 auto;
-  width:80%;
-  font-size:12px;
-  border:1px solid;
-  text-align: center;
-  table-layout: fixed;
-  margin-bottom: 40px;
+	margin: 0 auto;
+	width: 80%;
+	font-size: 12px;
+	border: 1px solid;
+	text-align: center;
+	table-layout: fixed;
+	margin-bottom: 40px;
 }
 
-table.scorecard th, tr, td {
-  padding: 0;
-  vertical-align: middle;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+table.scorecard th,
+tr,
+td {
+	padding: 0;
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
 }
 
 table.scorecard th {
-  border-bottom:1px solid;
-  background-color:#d3313a;
-  height:30px;
-  color: #fff;
+	border-bottom: 1px solid;
+	background-color: #d3313a;
+	height: 30px;
+	color: #fff;
 }
 
 table.scorecard th:not(:last-child) {
-  border-right:1px solid;
+	border-right: 1px solid;
 }
 
 table.scorecard td {
-  height:30px;
-  background: rgba(255, 255, 255, 0.5);
+	height: 30px;
+	background: rgba(255, 255, 255, 0.5);
 }
 
 table.scorecard tr td:not(:last-child) {
-  border-right:1px solid;
+	border-right: 1px solid;
 }
 
 table.scorecard tr:nth-child(2) td:nth-child(even) {
-  border-bottom:1px solid;
+	border-bottom: 1px solid;
 }
 
 table.scorecard tr:nth-child(2) td:last-child {
-  border-bottom:1px solid;
+	border-bottom: 1px solid;
 }
