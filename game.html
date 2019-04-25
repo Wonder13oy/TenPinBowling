@@ -10,6 +10,7 @@
 		<script src="./index.js" charset="utf-8"></script>
 
 		<h1 class="title">Bowling Score Card</h1>
+		<button type="button" onclick="playGame()" id="startBut">Start</button>
 		<div class="player-one">
 			<div id="buttons1" class="buttons">
 				Pins Hit:
@@ -48,7 +49,7 @@
 				</button>
 			</div>
 			<div id="scorecard">
-				<p id="player-one-name">Player 1</p>
+				<p id="playerOneName">Player 1</p>
 				<table
 					id="scorecardTable"
 					class="scorecard"
@@ -65,7 +66,7 @@
 						<th colspan="6">Frame 7</th>
 						<th colspan="6">Frame 8</th>
 						<th colspan="6">Frame 9</th>
-						<th colspan="6">Frame 10</th>
+						<th colspan="9">Frame 10</th>
 					</tr>
 					<tr>
 						<td colspan="3" class="p1Frames1"></td>
@@ -88,6 +89,7 @@
 						<td id="frame9" colspan="3" class="p1Frames2"></td>
 						<td colspan="3" class="p1Frames1"></td>
 						<td id="frame10" colspan="3" class="p1Frames2"></td>
+						<td colspan="3" class="p1Frames3"></td>
 					</tr>
 					<tr>
 						<td colspan="6" id="marker0"></td>
@@ -99,49 +101,49 @@
 						<td colspan="6" id="marker6"></td>
 						<td colspan="6" id="marker7"></td>
 						<td colspan="6" id="marker8"></td>
-						<td colspan="6" id="marker9"></td>
+						<td colspan="9" id="marker9"></td>
 					</tr>
 				</table>
 
 		<div class="player-two">
 			<div id="buttons2" class="buttons">
 				Pins Hit:
-				<button type="button" onclick="pinHit(0)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(0)" class="btn btn-primary">
 					Gutter
 				</button>
-				<button type="button" onclick="pinHit(1)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(1)" class="btn btn-primary">
 					1
 				</button>
-				<button type="button" onclick="pinHit(2)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(2)" class="btn btn-primary">
 					2
 				</button>
-				<button type="button" onclick="pinHit(3)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(3)" class="btn btn-primary">
 					3
 				</button>
-				<button type="button" onclick="pinHit(4)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(4)" class="btn btn-primary">
 					4
 				</button>
-				<button type="button" onclick="pinHit(5)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(5)" class="btn btn-primary">
 					5
 				</button>
-				<button type="button" onclick="pinHit(6)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(6)" class="btn btn-primary">
 					6
 				</button>
-				<button type="button" onclick="pinHit(7)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(7)" class="btn btn-primary">
 					7
 				</button>
-				<button type="button" onclick="pinHit(8)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(8)" class="btn btn-primary">
 					8
 				</button>
-				<button type="button" onclick="pinHit(9)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(9)" class="btn btn-primary">
 					9
 				</button>
-				<button type="button" onclick="pinHit(10)" class="btn btn-primary">
+				<button type="button" onclick="playerTwoGame(10)" class="btn btn-primary">
 					10
 				</button>
 			</div>
 			<div id="scorecard">
-				<p id="player-two-name">Player 2</p>
+				<p id="playerTwoName">Player 2</p>
 				<table
 					id="scorecardTable"
 					class="scorecard"
@@ -158,30 +160,30 @@
 						<th colspan="6">Frame 7</th>
 						<th colspan="6">Frame 8</th>
 						<th colspan="6">Frame 9</th>
-						<th colspan="6">Frame 10</th>
+						<th colspan="9">Frame 10</th>
 					</tr>
 					<tr>
-						<td colspan="3"></td>
-						<td id="p2frame1" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame2" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame3" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame4" colspan="3" class="p2Frames"></td>
-						>
-						<td colspan="3"></td>
-						<td id="p2frame5" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame6" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame7" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame8" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame9" colspan="3" class="p2Frames"></td>
-						<td colspan="3"></td>
-						<td id="p2frame10" colspan="3" class="p2Frames"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame1" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame2" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame3" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame4" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame5" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame6" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame7" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame8" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames1"></td>
+						<td id="p2frame9" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p1Frames1"></td>
+						<td id="p2frame10" colspan="3" class="p2Frames2"></td>
+						<td colspan="3" class="p2Frames3"></td>
 					</tr>
 					<tr>
 						<td colspan="6" id="p2marker0"></td>
