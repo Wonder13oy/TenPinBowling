@@ -1,61 +1,78 @@
-class BowlingGame {
+function Player() {
+  this.frames = [];
+  this.availableRolls = 20;
+  this.frame = [];
+  let count = 0;
 
-  constructor() {
-    this.rolls = [];
-    this.playerName = "";
+  this.roll = (pinsHit) => {
+    this.frame.push(pinsHit);
+    
+    if(this.frame.length <= 2)
+    {
+      this.frames.push(this.frame);
+      count++;
+    }
+    
+    this.availableRolls--;
   }
 
-  roll(pinsKnocked) {
-    this.rolls.push(pinsKnocked);
+  this.score = () => {
+    let sum = 0;
+    
+    this.frames.forEach(rolls => {
+      
+      rolls.forEach(roll => {
+        if (sum + roll <= 10) {
+          sum += roll;
+        } else {
+          sum = 'Error';
+          return;
+        }
+      });
+      
+    });
+
+    return sum;
   }
 
-  score() {
-    let result = 0;
-    let rollIndex = 0;
-    let game = this;
+}
 
-      for (var frameIndex = 0; frameIndex < 10; frameIndex++) {
+function Game() {
+  this.players = [];
+  let count = 0;
 
-          if (isStrike()){
-            result += getStrikeScore();
-            rollIndex++;
-          } else if (isSpare()) {
-            result += getSpareScore();
-            rollIndex += 2;
-          } else {
-            result += getOpenFrameScore();
-            rollIndex += 2;
-          }
-      }
 
-    return result;
-
-    function isSpare() {
-      return game.rolls[rollIndex] + game.rolls[rollIndex + 1] == 10;
-    }
-
-    function isStrike() {
-      return game.rolls[rollIndex] == 10;
-    }
-
-    function getSpareScore() {
-      return game.rolls[rollIndex] + game.rolls[rollIndex + 1] + game.rolls[rollIndex + 2];
-    }
-
-    function getStrikeScore() {
-      return game.rolls[rollIndex] + game.rolls[rollIndex + 1] + game.rolls[rollIndex + 2];
-    }
-
-    function getOpenFrameScore() {
-      return game.rolls[rollIndex] + game.rolls[rollIndex + 1];
-    }
+  this.addPlayer = (playerName = new Player()) => {
+    this.players.push(playerName);
   }
 
-  setPlayerName(playerName) {
-    this.playerName = playerName;
+  this.numberOfPlayers = () => {
+    return this.players.length;
   }
 
-  getPlayerName() {
-    return this.playerName;
+  this.getPlayers = () => {
+    return this.players;
+  }
+
+  this.getSpareScore = (player) => {
+    let spareScore = 0;
+
+    spareScore += player.frame[count] + player.frame[count + 1] + player.frame[count + 2];
+    return spareScore;
+  }
+
+  this.isSpare = (player) => {
+    return player.frame[count] + player.frame[count + 1] == 10;
+  }
+
+  this.getStrikeScore = (player) => {
+    let spareScore = 0;
+
+    spareScore += player.frame[count] + player.frame[count + 1] + player.frame[count + 2];
+    return spareScore;
+  }
+
+  this.isStrike = (player) => {
+    return player.frame[count] == 10;
   }
 }
