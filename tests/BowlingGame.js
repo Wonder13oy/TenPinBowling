@@ -39,8 +39,6 @@ function Player() {
 
 function Game() {
   this.players = [];
-  let count = 0;
-
 
   this.addPlayer = (playerName = new Player()) => {
     this.players.push(playerName);
@@ -54,25 +52,25 @@ function Game() {
     return this.players;
   }
 
-  this.getSpareScore = (player) => {
+  this.getSpareScore = (player, count = 0) => {
     let spareScore = 0;
 
     spareScore += player.frame[count] + player.frame[count + 1] + player.frame[count + 2];
     return spareScore;
   }
 
-  this.isSpare = (player) => {
+  this.isSpare = (player, count = 0) => {
     return player.frame[count] + player.frame[count + 1] == 10;
   }
 
-  this.getStrikeScore = (player) => {
+  this.getStrikeScore = (player, count = 0) => {
     let spareScore = 0;
 
     spareScore += player.frame[count] + player.frame[count + 1] + player.frame[count + 2];
     return spareScore;
   }
 
-  this.isStrike = (player) => {
+  this.isStrike = (player, count = 0) => {
     return player.frame[count] == 10;
   }
 }
