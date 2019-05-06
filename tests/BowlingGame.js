@@ -1,4 +1,4 @@
-function Player() {
+function Player() {//A player CLass
   this.frames = [];
   this.availableRolls = 20;
   this.frame = [];
@@ -37,18 +37,18 @@ function Player() {
 
 }
 
-function Game() {
-  this.players = [];
+function Game() {//A game class
+  this.players = [];//For multiple players that may want to play
 
   this.addPlayer = (playerName = new Player()) => {
     this.players.push(playerName);
   }
 
-  this.numberOfPlayers = () => {
+  this.numberOfPlayers = () => {//Returns the number of players that are playing
     return this.players.length;
   }
 
-  this.getPlayers = () => {
+  this.getPlayers = () => {//Returns the players that are playing the game
     return this.players;
   }
 
