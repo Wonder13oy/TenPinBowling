@@ -9,20 +9,19 @@ let p1Score = 0;
 let p2Score = 0;
 let isStrike = false;
 let isSpare = false;
-//______________________________DO NOT DELETE THE BELOW COMMENT_______________________________________
-// p1.setPlayerName(prompt('Enter Name Player One:'));
-// p2.setPlayerName(prompt('Enter Name Player Two:'));
 
-// function playGame() {
-// 	document.getElementById('playerOneName').innerText = p1.getPlayerName();
-// 	document.getElementById('playerTwoName').innerText = p2.getPlayerName();
+p1.setPlayerName(prompt('Enter Name Player One:'));
+p2.setPlayerName(prompt('Enter Name Player Two:'));
 
-// 	document.getElementById('buttons2').style.display = 'none';
-// 	document.getElementById('buttons1').style.display = 'inline-block';
-// 	document.getElementById('startBut').style.display = 'none';
-// }
-//______________________________DO NOT DELETE THE ABOVE COMMENT________________________________________
-// TODO: Send this funtions to your class
+function playGame() {
+	document.getElementById('playerOneName').innerText = p1.getPlayerName();
+	document.getElementById('playerTwoName').innerText = p2.getPlayerName();
+
+	document.getElementById('buttons2').style.display = 'none';
+	document.getElementById('buttons1').style.display = 'inline-block';
+	document.getElementById('startBut').style.display = 'none';
+}
+
 function playerOneGame(pinsHit) {
 	let pins = pinsHit;
 
